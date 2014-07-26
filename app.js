@@ -29,6 +29,7 @@
 
             ft.upload(imageURI, serverURL + "/images",
                 function (e) {
+                    alert(ft);
                     getFeed();
                 },
                 function (e) {
