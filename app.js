@@ -1,6 +1,6 @@
 (function () {
 
-    var serverURL = "104.131.225.87:3000", // IMPORTANT: This URL needs to be accessible from your phone for testing.
+    var serverURL = "http://104.131.225.87:3000", // IMPORTANT: This URL needs to be accessible from your phone for testing.
         $scroller = $('.scroller'),
 
         // Get List of images from server
@@ -29,7 +29,6 @@
 
             ft.upload(imageURI, serverURL + "/images",
                 function (e) {
-                    alert(ft);
                     getFeed();
                 },
                 function (e) {
