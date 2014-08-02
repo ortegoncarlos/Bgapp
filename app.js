@@ -71,7 +71,10 @@
 
         share = function(){
             console.log("img share "+window.img);
-             window.plugins.socialsharing.shareVia('com.apple.social.facebook', 'Message via FB', window.img, null, null, function(){console.log('share ok')}, function(msg) {alert('error: ' + msg)});
+             window.plugins.socialsharing.shareViaFacebook(
+                  '#bogota #12:12',
+                  [window.img,'www/image.gif'],
+                  null);
 
         };
 
