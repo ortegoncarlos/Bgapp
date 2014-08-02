@@ -16,7 +16,7 @@
         },
 
         // Upload image to server
-        upload = function (imageData) {
+        upload = function (imageURI) {
             var ft = new FileTransfer(),
                 options = new FileUploadOptions();
 
@@ -48,17 +48,17 @@
                 targetHeight: 1000,
                 popoverOptions: CameraPopoverOptions,
                 saveToPhotoAlbum: true,
-                destinationType: Camera.DestinationType.DATA_URL,
+                destinationType: Camera.DestinationType.FILE_URI,
                 encodingType: Camera.EncodingType.JPEG,
                 sourceType: Camera.PictureSourceType.PHOTOLIBRARY
             };
 
             navigator.camera.getPicture(
-                function (imageData) {
-                    img = "data:image/jpeg;base64," + imageData;
+                function (imageURI) {
+                    img = imageURI;
                     console.log("img get picture "+img);
-                    console.log(imageData);
-                    upload(imageData);
+                    console.log(imageURI);
+                    upload(imageURI);
 
                 },
                 function (message) {
