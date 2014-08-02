@@ -66,8 +66,8 @@
 
         },
 
-        share = function(){
-             window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null, null, function() {console.log('share ok')}, function(errormsg){alert(errormsg)});
+        share = function(imageURI){
+             window.plugins.socialsharing.shareViaFacebook('#Bogotasimultanea #12:12', null, imageURI, function() {console.log('share ok')}, function(errormsg){alert(errormsg)});
 
         };
 
