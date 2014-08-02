@@ -55,7 +55,7 @@
 
             navigator.camera.getPicture(
                 function (imageData) {
-                    img = imageData;
+                    img = "data:image/jpeg;base64," + imageData;
                     console.log("img get picture "+img);
                     console.log(imageData);
                     upload(imageData);
