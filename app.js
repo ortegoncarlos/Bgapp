@@ -5,13 +5,13 @@
 
         // Get List of images from server
         getFeed = function () {
-            $scroller.empty();
-            $.ajax({url: serverURL + "/images", dataType: "json", type: "GET"}).done(function (data) {
-                var l = data.length;
-                for (var i = 0; i < l; i++) {
-                    $scroller.append('<img src="' + serverURL + '/' + data[i].fileName + '"/>');
-                }
-            });
+            // $scroller.empty();
+            // $.ajax({url: serverURL + "/images", dataType: "json", type: "GET"}).done(function (data) {
+            //     var l = data.length;
+            //     for (var i = 0; i < l; i++) {
+            //         $scroller.append('<img src="' + serverURL + '/' + data[i].fileName + '"/>');
+            //     }
+            // });
 
         },
 
@@ -31,6 +31,7 @@
             ft.upload(imageURI, serverURL + "/images",
                 function (e) {
                     getFeed();
+                    share();
                    alert("Upload Ok");
                 },
                 function (e) {
@@ -55,7 +56,6 @@
                 function (imageURI) {
                     console.log(imageURI);
                     upload(imageURI);
-                    window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null, null, function() {console.log('share ok')}, function(errormsg){alert(errormsg)});
 
                 },
                 function (message) {
@@ -63,6 +63,11 @@
                 }, options);
 
             return false;
+
+        },
+
+        share = function(){
+             window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null, null, function() {console.log('share ok')}, function(errormsg){alert(errormsg)});
 
         };
 
