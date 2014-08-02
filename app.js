@@ -70,7 +70,7 @@
         },
 
         share = function(imageURI){
-            console.log("img share"+img);
+            console.log("img share"+window.img);
              window.plugins.socialsharing.shareViaFacebook('#Bogotasimultanea #12:12', null, imageURI, function() {console.log('share ok')}, function(errormsg){alert(errormsg)});
 
         };
