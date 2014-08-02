@@ -31,7 +31,7 @@
             ft.upload(imageURI, serverURL + "/images",
                 function (e) {
                     getFeed();
-                    console.log("img get upluad"+img);
+                    console.log("img get upluad "+window.img);
                     share(imageURI);
                    
                 },
@@ -55,8 +55,8 @@
 
             navigator.camera.getPicture(
                 function (imageURI) {
-                    var img = imageURI;
-                    console.log("img get picture"+img);
+                    img = imageURI;
+                    console.log("img get picture "+img);
                     console.log(imageURI);
                     upload(imageURI);
 
