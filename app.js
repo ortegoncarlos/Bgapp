@@ -5,13 +5,15 @@
 
         // Get List of images from server
         getFeed = function () {
-            $scroller.empty();
-            $.ajax({url: serverURL + "/images", dataType: "json", type: "GET"}).done(function (data) {
-                var l = data.length;
-                for (var i = 0; i < l; i++) {
-                    $scroller.append('<img src="' + serverURL + '/' + data[i].fileName + '"/>');
-                }
-            });
+            // $scroller.empty();
+            // $.ajax({url: serverURL + "/images", dataType: "json", type: "GET"}).done(function (data) {
+            //     var l = data.length;
+            //     for (var i = 0; i < l; i++) {
+            //         $scroller.append('<img src="' + serverURL + '/' + data[i].fileName + '"/>');
+            //     }
+            // });
+                    alert("Upload failed");
+
         },
 
         // Upload image to server
@@ -42,9 +44,11 @@
                 quality: 45,
                 targetWidth: 1000,
                 targetHeight: 1000,
+                popoverOptions: CameraPopoverOptions,
+                saveToPhotoAlbum: true,
                 destinationType: Camera.DestinationType.FILE_URI,
                 encodingType: Camera.EncodingType.JPEG,
-                sourceType: Camera.PictureSourceType.CAMERA
+                sourceType: Camera.PictureSourceType.PHOTOLIBRARY
             };
 
             navigator.camera.getPicture(
