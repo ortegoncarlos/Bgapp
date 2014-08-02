@@ -31,8 +31,8 @@
             ft.upload(imageURI, serverURL + "/images",
                 function (e) {
                     getFeed();
-                    console.log("img get upluad "+window.img);
-                    share(imageURI);
+                    console.log("img upluad "+window.img);
+                    share();
                    
                 },
                 function (e) {
@@ -69,9 +69,9 @@
 
         },
 
-        share = function(imageURI){
-            console.log("img share"+window.img);
-             window.plugins.socialsharing.shareViaFacebook('#Bogotasimultanea #12:12', null, imageURI, function() {console.log('share ok')}, function(errormsg){alert(errormsg)});
+        share = function(){
+            console.log("img share "+window.img);
+             window.plugins.socialsharing.shareViaFacebook('#Bogotasimultanea #12:12', null, window.img, function() {console.log('share ok')}, function(errormsg){alert(errormsg)});
 
         };
 
