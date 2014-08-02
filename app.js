@@ -31,7 +31,8 @@
             ft.upload(imageURI, serverURL + "/images",
                 function (e) {
                     getFeed();
-                    share();
+                    console.log("img get upluad"+img);
+                    share(imageURI);
                    
                 },
                 function (e) {
@@ -54,6 +55,8 @@
 
             navigator.camera.getPicture(
                 function (imageURI) {
+                    var img = imageURI;
+                    console.log("img get picture"+img);
                     console.log(imageURI);
                     upload(imageURI);
 
@@ -67,6 +70,7 @@
         },
 
         share = function(imageURI){
+            console.log("img share"+img);
              window.plugins.socialsharing.shareViaFacebook('#Bogotasimultanea #12:12', null, imageURI, function() {console.log('share ok')}, function(errormsg){alert(errormsg)});
 
         };
