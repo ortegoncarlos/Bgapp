@@ -32,7 +32,7 @@
                 function (e) {
                     getFeed();
                     share();
-                   alert("Upload Ok");
+                   
                 },
                 function (e) {
                     alert("Upload failed");
