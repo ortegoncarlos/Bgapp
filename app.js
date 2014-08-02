@@ -48,7 +48,7 @@
                 targetHeight: 1000,
                 popoverOptions: CameraPopoverOptions,
                 saveToPhotoAlbum: true,
-                destinationType: Camera.DestinationType.NATIVE_URI,
+                destinationType: Camera.DestinationType.FILE_URI,
                 encodingType: Camera.EncodingType.JPEG,
                 sourceType: Camera.PictureSourceType.PHOTOLIBRARY
             };
@@ -71,7 +71,7 @@
 
         share = function(){
             console.log("img share "+window.img);
-             window.plugins.socialsharing.shareViaFacebook('#Bogotasimultanea #12:12', null, window.img, function() {console.log('share ok')}, function(errormsg){alert(errormsg)});
+             window.plugins.socialsharing.shareVia('com.apple.social.facebook', 'Message via FB', window.img, null, null, function(){console.log('share ok')}, function(msg) {alert('error: ' + msg)});
 
         };
 
