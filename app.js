@@ -48,7 +48,7 @@
                 targetHeight: 1000,
                 popoverOptions: CameraPopoverOptions,
                 saveToPhotoAlbum: true,
-                destinationType: Camera.DestinationType.FILE_URI,
+                destinationType: Camera.DestinationType.NATIVE_URI,
                 encodingType: Camera.EncodingType.JPEG,
                 sourceType: Camera.PictureSourceType.PHOTOLIBRARY
             };
