@@ -5,14 +5,13 @@
 
         // Get List of images from server
         getFeed = function () {
-            // $scroller.empty();
-            // $.ajax({url: serverURL + "/images", dataType: "json", type: "GET"}).done(function (data) {
-            //     var l = data.length;
-            //     for (var i = 0; i < l; i++) {
-            //         $scroller.append('<img src="' + serverURL + '/' + data[i].fileName + '"/>');
-            //     }
-            // });
-                    alert("Upload failed");
+            $scroller.empty();
+            $.ajax({url: serverURL + "/images", dataType: "json", type: "GET"}).done(function (data) {
+                var l = data.length;
+                for (var i = 0; i < l; i++) {
+                    $scroller.append('<img src="' + serverURL + '/' + data[i].fileName + '"/>');
+                }
+            });
 
         },
 
@@ -32,6 +31,7 @@
             ft.upload(imageURI, serverURL + "/images",
                 function (e) {
                     getFeed();
+                   alert("Upload Ok");
                 },
                 function (e) {
                     alert("Upload failed");
@@ -55,6 +55,8 @@
                 function (imageURI) {
                     console.log(imageURI);
                     upload(imageURI);
+                    window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null, null, function() {console.log('share ok')}, function(errormsg){alert(errormsg)});
+
                 },
                 function (message) {
                     // We typically get here because the use canceled the photo operation. Fail silently.
